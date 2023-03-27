@@ -1,10 +1,11 @@
 
-import destinationsList from './App.js'
+import initialDestinationsList from './App.js'
 import '.index.css'
 
 class Destination = props =>{
     const {destinationDetails}=props
-    const {imgUrl, name}=destinationDetails
+    const {imgUrl, name, id}=destinationDetails
+
     return(
         <li className="list">
             <div className="container">

@@ -1,12 +1,12 @@
 
 import {Component} from 'react'
 import './index.css'
-import Destination from './components/DestinationItem'
+import Destination from '../DestinationItem'
 import initialDestinationsList from './App.js'
 
 class DestinationSearch extends Component {
     state={
-        searchInput: ''
+        searchInput: '',
         destinationsList: initialDestinationsList 
     }
     onChangeSearchInput= event=>{

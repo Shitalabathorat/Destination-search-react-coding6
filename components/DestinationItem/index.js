@@ -1,21 +1,16 @@
 
 import initialDestinationsList from './App.js'
-import '.index.css'
+import './index.css'
 
-const Destination = props =>{
-    
-    const {destinationDetails}=props
-    
-    const {imgUrl, name, id}=destinationDetails
-    
+const DestinationItem = props => {
+  const {destinationDetails} = props
+  const {imgUrl, name, id} = destinationDetails
 
-    return(
-        <li className="list">
-            <div className="container">
-                <img src={imgUrl} className="image"/>
-                <p>{name}</p>
-            </div>
-       </li>
-    )
+  return (
+    <li className="user-card-container">
+      <img src={imgUrl} alt="name" />
+      <p>{name}</p>
+    </li>
+  )
 }
-export default Destination
+export default DestinationItem

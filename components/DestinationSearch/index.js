@@ -1,29 +1,33 @@
-
 import {Component} from 'react'
-import './index.css'
-import Destination from '../DestinationItem'
-import initialDestinationsList from './App.js'
+import destinationsList from './App.js'
+import './index.scc'
+import DestinationItem from './components/DestinationItem'
 
 class DestinationSearch extends Component {
-    state={
-        searchInput: '',
-        destinationsList: initialDestinationsList 
-    }
-    onChangeSearchInput= event=>{
-        this.setState({searchInput: event.target.value})
-    }
-   
-  render() {
-      const {searchInput,destinationsList}=this.state
+  state = {searchInput: ''}
 
-      const searchResults=destinationsList.filter(eachUser=>eachUser.name.includes(searchInput),)
+  onChangeSearchInput = event => {
+    this.setState({searchInput: event.target.value})
+  }
+
+  render() {
+    const {searchInput} = this.state
+
+    const searchResults = destinationsList.filter(eachItem =>
+      eachItem.name.includes(searchInput),
+    )
+
     return (
-      <div class="app-container">
-        <h1 className="head">Destination Search</h1>
-        <input type="search" value={searchInput} onChange={this.onChangeSearchInput}/>
+      <div className="app-container">
+        <h1 className="title">Destination Search</h1>
+        <input
+          type="search"
+          value={searchInput}
+          onChange={this.onChangeSearchInput}
+        />
         <ul className="list-container">
           {searchResults.map(eachItem => (
-            <Destination destinationDetails={eachUser} deleteUser={eachUser} key={eachItem.id} />
+            <DestinationItem destinationDetails={eachItem} key={eachItem.id} />
           ))}
         </ul>
       </div>

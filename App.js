@@ -72,3 +72,4 @@ const destinationsList = [
 const App = () => <DestinationSearch destinationsList={destinationsList} />
 
 export default App
+

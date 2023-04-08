@@ -1,7 +1,9 @@
+// Write your code here
 import {Component} from 'react'
 import destinationsList from './App.js'
 import './index.scc'
-import DestinationItem from './components/DestinationItem'
+
+import DestinationItem from '../DestinationItem'
 
 class DestinationSearch extends Component {
   state = {searchInput: ''}
@@ -35,3 +37,4 @@ class DestinationSearch extends Component {
   }
 }
 export default DestinationSearch
+
